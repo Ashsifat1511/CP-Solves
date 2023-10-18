@@ -1,0 +1,1 @@
+{"name":"Local: A_Yet_Another_Promotion","url":"d:\\VS-Code\\A_Yet_Another_Promotion.cpp","tests":[{"id":1676193860134,"input":"1\n5\n3 4\n-1 2\n5 -3\n3 3\n-1 -2","output":"-1 2\n-1 -2\n3 4\n3 3\n5 -3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\VS-Code\\A_Yet_Another_Promotion.cpp","group":"local","local":true}

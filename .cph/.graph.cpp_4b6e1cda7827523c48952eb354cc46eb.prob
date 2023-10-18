@@ -1,0 +1,1 @@
+{"name":"Local: graph","url":"d:\\VS-Code\\graph.cpp","tests":[{"id":1684174901943,"input":"4 7\n0 0\n0 2\n1 0\n1 2\n2 1\n2 3\n3 3\n2","output":"2 -> 2 1 3 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\VS-Code\\graph.cpp","group":"local","local":true}

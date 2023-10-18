@@ -1,0 +1,1 @@
+{"name":"Lift","group":"LightOJ","url":"https://lightoj.com/problem/lift","interactive":false,"memoryLimit":64,"timeLimit":1000,"tests":[],"testType":"single","input":{"type":"stdin"},"output":{"type":"stdout"},"languages":{"java":{"mainClass":"Main","taskClass":"Lift"}},"batch":{"id":"5f081aa3-3dee-4113-a7cd-199d43f1c101","size":1},"srcPath":"d:\\VS-Code\\Lift.cpp"}
