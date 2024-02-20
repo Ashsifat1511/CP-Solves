@@ -1,61 +1,78 @@
-#include<bits/stdc++.h>
-
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+#define endl "\n"
+#define tab "\t"
+#define in long long
+#define ordered_set tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
+const in modv = 1e9 + 7;
+const double pi = 3.141592653589793238;
 using namespace std;
-
-#define all(x) x.begin(),x.end()
-#define forn for(int i = 0; i < n; i++)
-
-const int N = 1e6+7;
-
-typedef  long long int ll;
-
-#define pb push_back
-
-#define cs cout<<"Case "<<tc<<": "
-
-int main(){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    int t=1;
+ 
+in t = 1, n, x, y, m, tc = 1, k;
+vector<in> a, b, c;
+map<char, in> mp;
+set<in> st;
+string s,s2,s3,s4;
+ 
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+ 
     cin>>t;
-    for(int tc=1;tc<=t;tc++)
+ 
+    while(t--)
     {
-        int n,k,m;string s;cin >> n >> k >> m>>s;
-        set<char> st;
-        for(int i=0;i<m;i++){
-            st.insert(s[i]);
+        cin>>n>>k>>m>>s;
+        for(int i=0;i<m;++i)
+        {
+            if(k>(in)s[i]-97) s2.push_back(s[i]);
         }
-        if(st.size()<k){
-            cout<<"NO\n";
-            string hoini="";
-            for(int i=0;i<k;i++){
-                hoini+=('a'+i);
-            }
-            cout<<hoini<<endl;
+ 
+        if(s2=="")
+        {
+            cout<<"NO"<<endl;
+            for(int i=0;i<n;++i) cout<<'a';
+            cout<<endl;
+            continue;
         }
-        else{
-            unordered_map<char,int> mp;
-            for(int i=0;i<s.size();i++){
-                mp[s[i]]++;
+ 
+        s3="";
+        x=0;
+        for(int i=0;i<s2.size();++i)
+        {
+            ++mp[s2[i]];
+            if(mp.size()==k) s3.push_back(s2[i]), ++x, mp.clear();
+        }
+ 
+        if(x>=n) cout<<"YES"<<endl;
+        else
+        {
+            cout<<"NO"<<endl;
+            if(mp.empty())
+            {
+                while(s3.size()<n) s3.push_back(s2.back());
+                cout<<s3<<endl;
             }
-            int flag=0;char ans;
-            for(auto x:mp){
-                if(x.second!=n){
-                    flag=1;
-                    ans=x.first;
-                    break;
+            else
+            {
+                char c;
+                for(char ch='a';ch<k+97;++ch)
+                {
+                    if(!mp[ch])
+                    {
+                        c=ch; break;
+                    }
                 }
-            }
-            if(flag==0) cout<<"YES\n";
-            else{
-                cout<<"NO\n";
-                string s1="";
-                for(int i=0;i<n;i++){
-                    s1+=ans;
-                }
-                cout<<s1<<endl;
+ 
+                while(s3.size()<n) s3.push_back(c);
+                cout<<s3<<endl;
             }
         }
+ 
+        mp.clear(), s2.clear(), s3.clear();
     }
+ 
     return 0;
 }
